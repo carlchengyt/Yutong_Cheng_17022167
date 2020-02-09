@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/navbars/">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/mystyles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark font">
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">Rain Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse font" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('main.index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.signup') }}">Sign
+                </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+            <label>
+                <input class="form-control" type="text" placeholder="Search">
+            </label>
+        </form>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>
